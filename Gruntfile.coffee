@@ -30,13 +30,13 @@ module.exports = (grunt) ->
 
     'gh-pages':
       options:
-        base: 'public'
+        base: 'www'
       src: ['**']
 
     stylus:
       compile:
         files:
-          'www/css/main.css': 'styles/main.styl'
+          'www/css/styles.css': 'assets/css/styles.styl'
 
     browserify:
       dist:
@@ -52,7 +52,7 @@ module.exports = (grunt) ->
           data:
             DEBUG: target is 'dev'
         files:
-          'www/index.html': ['views/index.jade']
+          'www/index.html': ['views/layout.jade']
 
     uglify:
       options:

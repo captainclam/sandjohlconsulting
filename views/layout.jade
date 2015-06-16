@@ -1,4 +1,4 @@
-!!!
+doctype
 html
   head
     meta(charset='utf8')
@@ -10,15 +10,12 @@ html
 
     script(src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
-    
-    link(rel='stylesheet', href='/css/styles.css')
+
+    link(rel='stylesheet', href='css/styles.css')
   body
     include index
 
-  //- add other scripts through require.js, not here
-  script(data-main="js/main", src="js/require.js")
-
-  script
+  script.
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-42131573-1']);
     _gaq.push(['_trackPageview']);
