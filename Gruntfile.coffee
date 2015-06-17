@@ -8,7 +8,7 @@ module.exports = (grunt) ->
     cssmin:
       combine:
         files:
-          'www/css/main.css': ['www/css/main.css']
+          'www/main.css': ['www/main.css']
 
     copy:
       build:
@@ -36,12 +36,12 @@ module.exports = (grunt) ->
     stylus:
       compile:
         files:
-          'www/css/styles.css': 'assets/css/styles.styl'
+          'www/main.css': 'src/styl/main.styl'
 
     browserify:
       dist:
         files:
-          'www/js/app.js': ['src/app.coffee']
+          'www/js/app.js': ['src/coffee/entry.coffee']
         options:
           transform: ['coffeeify']
           extensions: '.coffee'
@@ -52,7 +52,7 @@ module.exports = (grunt) ->
           data:
             DEBUG: target is 'dev'
         files:
-          'www/index.html': ['views/layout.jade']
+          'www/index.html': ['views/index.jade']
 
     uglify:
       options:
@@ -72,14 +72,14 @@ module.exports = (grunt) ->
     autoprefixer:
       options: {}
       no_dest:
-        src: 'www/css/main.css'
+        src: 'www/main.css'
 
     watch:
       stylus:
-        files: ['styles/**/*.styl']
+        files: ['src/styl/**/*.styl']
         tasks: ['stylus']
       browserify:
-        files: ['src/**/*.coffee']
+        files: ['src/coffee/**/*.coffee']
         tasks: ['browserify']
       jade:
         files: ['views/**/*.jade']
@@ -88,7 +88,7 @@ module.exports = (grunt) ->
         options:
           livereload: port: 12345
         files: [
-          'www/css/main.css'
+          'www/main.css'
           'www/index.html'
           'www/js/app.js'
         ]

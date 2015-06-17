@@ -1,51 +1,89 @@
-.stripe
+doctype
+html
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name='description', content='description of your site')
+    meta(name='author', content= "author of the site")
 
-header
-  .container
-    img.logo(src="img/logo.jpg")
+    title Sandjohl Consulting | Energy infrastructure commercial, contract, regulatory &amp; technical advice
 
-    h1 Sandjohl Consulting Pty Ltd
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+    script(src="js/app.js")
 
-    h2 Energy infrastructure commercial, contract, regulatory &amp; technical advice 
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css')
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    link(rel='stylesheet', href='main.css')
 
-.container
-  .menu
-    a.btn.active(href="#home") Home 
-    a.btn(href="#background") Background
-    a.btn(href="#qualifications") Qualifications
-    a.btn(href="#experience") Experience
-    a.btn(href="#representation") Representation
-    a.btn(href="#publications") Publications
-    a.btn(href="#contact") Contact
+    if DEBUG
+      script(src='http://localhost:12345/livereload.js')
+  body
 
-//- .fade
+    .container
+      .page-header
+        h1
+          img.logo(src="img/logo.jpg")
+          | Sandjohl Consulting Pty Ltd
+          div
+            small Energy infrastructure commercial, contract, regulatory &amp; technical advice
 
-.container
+    .container
+      ul.nav.nav-pills.nav-justified
+        li.active
+          a(href="#home") Home
+        li
+          a(href="#background") Background
+        li
+          a(href="#qualifications") Qualifications
+        li
+          a(href="#experience") Experience
+        li
+          a(href="#representation") Representation
+        li
+          a(href="#publications") Publications
+        li
+          a(href="#contact") Contact
 
-  #home.section
-    include _home
+    //- .fade
 
-  #qualifications.section
-    include _qualifications
+    .container
 
-  #background.section
-    include _background
+      #home.section
+        include _home
 
-  #experience.section
-    include _experience
+      #qualifications.section
+        include _qualifications
 
-  #representation.section
-    include _representation
+      #background.section
+        include _background
 
-  #publications.section
-    include _publications
+      #experience.section
+        include _experience
 
-  #contact.section
-    include _contact
+      #representation.section
+        include _representation
 
-  footer
-    .disclaimer
-      p While every effort has been made to ensure the accuracy of this website, Stephen Philip Ohl and Sandjohl Consulting Pty Ltd, accept no liability or responsibility whatsoever for the contents of this website or its attachments in respect of any use of or reliance upon it by any party.
+      #publications.section
+        include _publications
 
-    p Sandjohl Consulting Pty Ltd (ACN 163 316 309)
-    p Updated 28 February 2015
+      #contact.section
+        include _contact
+
+      footer
+        .disclaimer
+          p While every effort has been made to ensure the accuracy of this website, Stephen Philip Ohl and Sandjohl Consulting Pty Ltd, accept no liability or responsibility whatsoever for the contents of this website or its attachments in respect of any use of or reliance upon it by any party.
+
+        p Sandjohl Consulting Pty Ltd (ACN 163 316 309)
+        p Updated 28 February 2015
+
+  script.
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-42131573-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
